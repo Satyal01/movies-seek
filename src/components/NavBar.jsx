@@ -6,7 +6,7 @@ const NavBar = () => {
   
     return (
     <>
-    <div className='bg-black  flex justify-between px-5 items-center h-16 text-violet-500'>
+    <div className='bg-black  flex justify-between px-5 items-center h-16 text-violet-500  drop-shadow-md drop-shadow-gray-800'>
       <div>
         <NavLink to={"/"} >Movie App</NavLink>
       </div>
@@ -16,6 +16,7 @@ const NavBar = () => {
       </div>
     </div>
     <Outlet />
+      
     </>
   )
 }

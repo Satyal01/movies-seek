@@ -1,7 +1,7 @@
 
-async function ftechData(){
+async function fetchData(){
    
-  const url = 'https://imdb236.p.rapidapi.com/imdb/lowest-rated-movies';
+  const url = 'https://imdb236.p.rapidapi.com/imdb/most-popular-movies';
   const options = {
     method: 'GET',
     headers: {
@@ -12,7 +12,6 @@ async function ftechData(){
   
   try {
     const response = await fetch(url, options);
-    console.log(typeof response , response);
     return response.json();
   } catch (error) {
     console.error("erro detected",  error);
@@ -22,4 +21,4 @@ async function ftechData(){
 }
 
 
-export default ftechData;
+export default fetchData;

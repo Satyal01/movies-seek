@@ -1,21 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router'
 
-const MovieCard = ({movie}) => {
+const MovieCard = ({ movie }) => {
   return (
-
-    <div className={`relative w-40 h-52 flex flex-col items-center justify-end rounded-lg shadow-lg  gap-2 overflow-hidden
-    md:h-[22rem] md:w-[20rem] bg-cover bg-center`} style={{backgroundImage : `url(${movie.primaryImage})`}}>
-      
-      <div className=' w-full text-center p-1 pt-[9.8rem]  md:pt-[20rem] h-full  hover:backdrop-blur-xs md:hover:pt-[10rem]  transition-all duration-200 ease-in'>
-        <p className='font-[-poppins] font-medium text-white px-2'>{movie.primaryTitle}</p>
-        <p className='text-right  absolute bottom-0 right-0 text-[#22222] text-sm '>{movie.releaseDate}</p>
-      </div>
-      <div className='absolute top-1 right-1  w-9 h-9 rounded-full  p-2  cursor-pointer backdrop-blur-xs '>
-        💗
-      </div>
+    <Link to={movie.id} state={{thisMovieData : movie}}>
+    <div className={`relative w-40 h-52  rounded-lg shadow-lg  overflow-hidden border-1 border-gray-800 
+    md:h-[341px] md:w-[227px] `}>
+      <img className='w-full h-52 md:h-[341px] hover:scale-125 transition-scale duration-300 ease-out' src={movie.primaryImage} alt={movie.primaryTitle} />
     </div>
-      )
-    }
+    </Link>
+
+  )
+}
 
 
 export default MovieCard
