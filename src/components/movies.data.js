@@ -9,7 +9,6 @@ async function fetchData(){
       'x-rapidapi-host': 'imdb236.p.rapidapi.com'
     }
   };
-  
   try {
     const response = await fetch(url, options);
     return response.json();

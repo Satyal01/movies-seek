@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react'
 import MoviesList from "./MoviesList";
 import SearchBar from './SearchBar';
 import HomeSkeletonLoading from './HomeSkeletonLoading';
-import {SkeletonTheme} from "react-loading-skeleton";44
 import NotFound from "./NotFound"
+import {SkeletonTheme} from "react-loading-skeleton";
 import useStore from '../zustandStore/store';
 
 const Home = () => {
