@@ -20,12 +20,12 @@ const Favourites = () => {
     )
   }
   return (
-    <div className='h-screen bg-black'>
-      <div  className="min-h-full min-w-full  flex  items-center justify-center pt-6 gap-4 md:gap-18 
-      md:flex-row flex-wrap md:items-start md:justify-start md:px-10 ">
+    <div className='min-h-screen bg-black p-4'>
+      <div  className=" md:min-h-full md:min-w-full  flex pt-6 gap-1 md:gap-14 
+      flex-row flex-wrap md:items-start md:justify-start md:px-10 ">
           {favMovies.map((movie)=>{
             return (
-            <div className='relative fav-card'key={movie.id} >
+              <div className='relative fav-card'key={movie.id} >
             <div >
               <MovieCard  movie={movie} />
               <div id={movie.id}  onClick={hanldeRFavClick} className='absolute right-0 top-0 w-10 h-10 cursor-pointer text-medium p-2 border-1 border-black rounded-full text-white'>
