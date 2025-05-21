@@ -13,13 +13,10 @@ const Home = () => {
     // const [isLoading, setLoading] = useState(true);
 
     useEffect(()=>{
-      if(moviesDataStore.length===0){
-        fetchMoviesData()
-      }
+      if(moviesDataStore.length===0){ 
+        fetchMoviesData() //this is the zustand store function
+      } 
     },[]);
-    function handleSearch(){
-
-    }
     
     
     // if(moviesData.length===0){
@@ -30,6 +27,9 @@ const Home = () => {
     //   )
     // }
    
+    function handleSearch(){
+
+    }
     
     return(
       <div className="md:min-h-screen bg-black">
@@ -37,9 +37,8 @@ const Home = () => {
         <div  className="min-h-full min-w-full  flex  items-center justify-center pt-6 gap-4 md:gap-18 
       md:flex-row flex-wrap md:items-start md:justify-start md:px-10 ">
           { isLoading && <SkeletonTheme baseColor="#292828" highlightColor="#545252" >  <HomeSkeletonLoading cards={10} /></SkeletonTheme>}
-          <MoviesList moviesData={moviesDataStore} searchQuery={search}/>
-          { moviesDataStore.length===0 && isLoading===false ? <NotFound/>  : null }
-        </div>
+          { moviesDataStore.length===0 && isLoading=== false ? <NotFound/>  :  <MoviesList moviesData={moviesDataStore} searchQuery={search}/>}
+          </div>
       </div>
     )
   

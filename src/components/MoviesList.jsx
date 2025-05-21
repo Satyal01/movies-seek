@@ -8,7 +8,8 @@ const MoviesList = ({moviesData, searchQuery}) => {
     const filteredMovies = moviesData.filter((movie)=>{
       return movie.primaryTitle.toLowerCase().includes(searchQuery.toLowerCase())
     })
-  
+    
+    console.log("moviesdata ", typeof(moviesData))
     if(filteredMovies.length===0){
       return <NoteFound/>
     }
@@ -32,6 +33,7 @@ const MoviesList = ({moviesData, searchQuery}) => {
   return (
     <>
     {
+        
         moviesData.map((movie)=>{
             return (
                 movie.primaryTitle.toLowerCase().includes(searchQuery.toLowerCase()) && 

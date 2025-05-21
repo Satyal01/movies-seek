@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation, useSearchParams } from 'react-router'
+import { useLocation} from 'react-router'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 function GenreElement({value}){
@@ -25,6 +29,8 @@ const MoviePage = () => {
             return movie.id===thisMovieData.id;
         }).length!==0 && setIsFav(true) 
     })
+
+
     
     let link = thisMovieData.trailer;
     if(link){
@@ -35,18 +41,18 @@ const MoviePage = () => {
     function hanldeFavClick(){
         let favMovies = JSON.parse(localStorage.getItem("FavMovies")) || [];
         if(isFav){
-            console.log('if')
             const newFavMovies = favMovies.filter((moive)=>{
                 return moive.id!==thisMovieData.id;
             })
             localStorage.setItem("FavMovies", JSON.stringify(newFavMovies))
+            toast.success("removed from Favourites",{position:'bottom-right',})
             setIsFav(!isFav)
         }else{
-            console.log("else")
             favMovies.push(thisMovieData); 
             localStorage.setItem("FavMovies" , JSON.stringify(favMovies));
-            alert("save to Favourites Movies");
-            setIsFav(!isFav) 
+            setIsFav(!isFav);
+            toast.success("Added to Favourites",{position:'bottom-right',})
+
         }
         
     }
