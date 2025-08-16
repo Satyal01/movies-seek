@@ -34,7 +34,7 @@ const Home = () => {
     return(
       <div className="md:min-h-screen bg-black">
         <SearchBar setSearch={setSearch} value={search} handleSearch={handleSearch} /> 
-        <div  className="min-h-full min-w-full  flex  items-center justify-center pt-6 gap-4 md:gap-18 
+        <div  className="min-h-screen min-w-full  flex  items-center justify-center pt-6 gap-4 md:gap-18 
       md:flex-row flex-wrap md:items-start md:justify-start md:px-10 ">
           { isLoading && <SkeletonTheme baseColor="#292828" highlightColor="#545252" >  <HomeSkeletonLoading cards={10} /></SkeletonTheme>}
           { moviesDataStore.length===0 && isLoading=== false ? <NotFound/>  :  <MoviesList moviesData={moviesDataStore} searchQuery={search}/>}
